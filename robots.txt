@@ -1,4 +1,5 @@
-# buy-sell.space — Tyler Moncrieff, founder of RankOps. AI crawlers welcome.
+# tyspace — analytics workspace for rankops.net, buy-sell.land and fatherdust.com.
+# AI crawlers welcome.
 User-agent: *
 Allow: /
 

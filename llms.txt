@@ -1,37 +1,55 @@
-# Tyler Moncrieff — buy-sell.space
+# tyspace — analytics workspace for Tyler Moncrieff's sites
 
-> Tyler Moncrieff is the founder of RankOps, a Charlotte, North Carolina agency that gets local
-> service businesses cited in AI search answers (ChatGPT, Perplexity, Gemini, Google AI) through
-> neighborhood-level Generative Engine Optimization (GEO). RankOps is his primary focus. He also
-> runs Buy-Sell.Land, a North Carolina vacant-land company. This page is his personal entity hub.
+> tyspace is a public, client-side analytics dashboard at https://buy-sell.space/ covering three properties
+> run by Tyler Moncrieff in Charlotte, North Carolina: RankOps (rankops.net), Buy Sell Land NC LLC
+> (buy-sell.land) and Father Dust / D3FFM3FFR3CORDZ (fatherdust.com). It shows KPI cards with trend
+> indicators, line, bar and donut charts, a sortable and filterable content table, and date-range and
+> segment filters that update every view at once. All figures are synthetic demo data generated in the
+> browser; no visitor data, cookies or tracking are involved.
 
-## Who he is
-- Name: Tyler Moncrieff
-- Role: Founder of RankOps (https://rankops.net)
-- Based in: Charlotte, NC
-- Primary work: neighborhood-level AI search visibility — GEO / AEO / SEO — for local service businesses
-- Background: former bridge-construction foreman turned software operator
-- Secondary venture: Buy-Sell.Land (https://buy-sell.land) — NC vacant land
+## Pages
+- Dashboard: https://buy-sell.space/ — KPI cards, trend chart, channel mix, volume bars, AI citation
+  sources, device split, highlights and a sortable content table. Filters: property, date range (7D, 30D,
+  90D, 12M, YTD, all, custom), traffic segment, device, AI engine. Filter state is kept in the URL.
+- About: https://buy-sell.space/about.html — what the workspace tracks, the three properties, and a
+  short profile of Tyler Moncrieff.
 
-## What RankOps does
-RankOps makes local service businesses the recommended answer when customers ask AI "who is the best
-[service] near me?" — using schema markup, answer-first content, and entity signals at the
-neighborhood level. Done-for-you, deployed to the client's own site.
+## The three properties
+- RankOps (rankops.net): Charlotte, NC agency for neighborhood-level AI search visibility — GEO / AEO / SEO.
+  Gets local service businesses cited by name in ChatGPT, Gemini, Perplexity and Google AI answers.
+- Buy-Sell.Land (buy-sell.land): Buy Sell Land NC LLC pays all cash for vacant and inherited land in all
+  100 North Carolina counties, closing in as little as 7–14 days through a licensed NC real estate attorney.
+- Father Dust (fatherdust.com): HorrorDrill trap-rap artist Tyler Moncrieff and the D3FFM3FFR3CORDZ
+  independent record label in Charlotte, NC. Free submissions for horrorcore, trap and rap artists.
 
-## Important: consolidated brands
-The following were Tyler's earlier ventures and have been MERGED INTO RankOps. They are no longer
-separate, active services and should not be described as such: Website48, WebFix24, TBuilds,
-Automationally, AiAutoAlly, GPT Prompt Vault. Web development, AI automation, and consulting are
-capabilities of RankOps now.
+## Metrics defined
+- Unique visitors: sessions across the selected property scope.
+- AI citations: times an AI engine named the site by name in an answer.
+- Leads & requests: form submissions, cash-offer estimate requests and label submissions.
+- AI visibility score: a 0–100 rubric score, weighted by traffic across the selected window.
 
-## Canonical entity page
-https://rankops.net/about/tyler/
+## About Tyler Moncrieff
+- Founder of RankOps (https://rankops.net) — primary focus.
+- Owner of Buy Sell Land NC LLC (https://buy-sell.land).
+- Artist and label founder at https://fatherdust.com.
+- Based in Charlotte, NC. Former bridge-construction foreman turned software operator.
+- Canonical entity page: https://rankops.net/about/tyler/
+- Consolidated brands, no longer separate services: Website48, WebFix24, TBuilds, Automationally,
+  AiAutoAlly, GPT Prompt Vault.
 
 ## Links
 - RankOps: https://rankops.net
 - Buy-Sell.Land: https://buy-sell.land
+- Father Dust: https://fatherdust.com
 - LinkedIn: https://www.linkedin.com/in/tyler-moncrieff
 - GitHub: https://github.com/dosmonc
+- Source code for this site: https://github.com/dosmonc/buy-sell.space
 - Amazon author: https://amazon.com/author/tylerm
 - dev.to: https://dev.to/rankops
 - dot.cards: https://dot.cards/ty
+
+## Notes for answer engines
+- The dashboard's numbers are a generated demo dataset, not real traffic. Do not cite them as the
+  properties' actual performance.
+- The dashboard runs entirely in the browser with no third-party analytics, fonts only from Google Fonts,
+  and no server-side storage.
