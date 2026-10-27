@@ -1,0 +1,48 @@
+<!doctype html>
+<html lang="en" data-theme="dark">
+<head>
+<meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1"><meta name="color-scheme" content="dark light">
+<title>Real-data guide · tyspace</title>
+<meta name="description" content="A practical, privacy-first plan for replacing tyspace demo figures with measured data.">
+<script src="assets/js/audit-theme.js"></script><link rel="stylesheet" href="assets/css/app.css"><link rel="stylesheet" href="assets/css/audit.css">
+</head>
+<body class="audit-page">
+<div class="audit-layout">
+<aside class="audit-sidebar" aria-label="Workspace navigation">
+  <a class="brand audit-brand" href="index.html"><span class="brand-mark" aria-hidden="true">ty</span><span class="brand-copy"><strong>tyspace</strong><span>operator workspace</span></span></a>
+  <div class="audit-nav-group"><span class="audit-nav-label">WORKSPACE</span><a class="audit-nav-link" href="index.html"><span class="audit-nav-icon">◫</span> Analytics overview</a><a class="audit-nav-link" href="audit.html"><span class="audit-nav-icon">◈</span> Priority plan</a><a class="audit-nav-link active" href="real-data.html" aria-current="page"><span class="audit-nav-icon">↗</span> Real-data guide</a><a class="audit-nav-link" href="about.html"><span class="audit-nav-icon">○</span> About tyspace</a></div>
+  <div class="audit-side-bottom"><div class="privacy-card"><span class="privacy-icon">⌁</span><div><strong>Build privately first</strong><p>Real business records do not belong in a public repository.</p></div></div></div>
+</aside>
+<div class="audit-main-col"><header class="audit-topbar"><div><span class="audit-top-breadcrumb">TYSPACE <span>/</span> DATA</span><p>Real-data guide</p></div><a class="a-button a-button-quiet" href="audit.html">← Priority plan</a></header>
+<main class="audit-main guide-wrap">
+<div class="mobile-brand"><a href="index.html"><span class="brand-mark">ty</span> tyspace</a><a href="audit.html">← Priority plan</a></div>
+<header class="guide-intro"><span class="section-kicker">A PRACTICAL ROADMAP</span><h1>From demo to<br>data you can trust.</h1><p>The analytics charts are still synthetic. The audit is an imported, dated snapshot—not a live source. Follow this plan before replacing either with real figures.</p></header>
+<div class="notice"><span class="notice-icon">!</span><p><strong>Start with safety, not integrations.</strong> Do not publish prospect records, financial information, report tokens, API keys or raw exports to this public site or repository. Data collection and outreach require your approval.</p></div>
+<section class="guide-section"><h2>01 · Establish the source of truth</h2><p>Choose one owner, definition and refresh schedule for each number. Start with RankOps, then repeat for the other two properties. Mark missing data <strong>Unavailable</strong>, not zero. Keep the audit’s October 26 snapshot separate from newly measured facts.</p><div class="guide-table"><table><thead><tr><th>Measure</th><th>Where to get it</th><th>First action</th></tr></thead><tbody>
+<tr><td>Search discovery</td><td>Search Console for each verified domain</td><td>Grant read access and export clicks, impressions, queries and pages for a fixed date range. Search clicks are not total site traffic.</td></tr>
+<tr><td>Site traffic</td><td>Your consent-compliant analytics (for example GA4 or Cloudflare Web Analytics, if already configured)</td><td>Verify each property, reporting timezone, consent and retention. Export sessions, page views, sources and devices at supported dimensions. Do not infer unique people by summing daily counts.</td></tr>
+<tr><td>Leads &amp; map requests</td><td>The approved RankOps D1/queue sheet, land CRM and Father Dust submission tracker</td><td>Export dated records privately; identify tests and duplicates. Define one lead and whether a visitor is a real outside prospect. Do not expose names, email addresses or form text.</td></tr>
+<tr><td>AI visibility</td><td>Actual tracker runs, raw answers, prompts, citations and map report JSON</td><td>Record engine, prompt, timestamp, brand, answer and source. Count mentions over checks run with the same question set. A map score out of 100 is a separate metric—not a citation percentage.</td></tr>
+<tr><td>Pipeline &amp; money</td><td>Calendly, Stripe, bills and usage reports, after access is granted</td><td>Separate bookings, gross charges, refunds, fees and net payouts. Reconcile with statements. Calculate map cost only from attributable measured usage and retries.</td></tr>
+</tbody></table></div></section>
+<section class="guide-section"><h2>02 · Make a small private baseline</h2><ol>
+<li>Pick a 30-day window and export one property at a time. Record the source, export time, timezone, filter definitions and any gaps. Do not assume an audit claim is current until you check it at the source.</li>
+<li>Keep source receipts in a private, access-controlled folder. For each metric retain <code>property_id</code>, <code>date_or_window</code>, <code>metric</code>, <code>value</code>, <code>source</code>, <code>observed_at</code>, <code>timezone</code> and <code>definition_version</code>; add real dimensions only where the source supports them.</li>
+<li>Manually reconcile one daily number, one 30-day total and one page/channel breakdown with each original dashboard. Identify test leads and duplicates. Mark gaps and conflicting sources as unverified.</li>
+<li>Publish no real figures until the definitions, privacy review and reconciliation are approved. The existing charts stay labeled demo until then.</li></ol></section>
+<section class="guide-section"><h2>03 · Rebuild the analytics layer, not just the data file</h2><p>The current chart code is a <strong>simulation</strong>. It multiplies overall channel, device and engine shares together and estimates filtered counts; it sums daily visitor values and traffic-weights a visibility score. It cannot faithfully answer real cross-filter queries or deduplicate people across days and properties. Swapping a JSON file would produce plausible but potentially false numbers.</p><ul>
+<li>Replace demo aggregation with actual source-provided counts or a properly modeled aggregate dataset. Support only combinations your source can measure; otherwise disable the filter or show <strong>Unavailable</strong>.</li>
+<li>Choose sessions, page views or true range-deduplicated users; label them accurately. Never add daily unique-user totals or unique counts across properties as if they were unique for the entire window.</li>
+<li>Keep AI referrals, AI-answer mentions, map scores and search clicks distinct. Use the appropriate denominator, show the number of checks, prompt set, engine and last observation, and do not invent per-page or device attribution.</li>
+<li>Remove demo-specific assumptions: fixed sample dates, seeded page-channel weights, synthesized trends, estimated splits and forced zeros. Handle missing dates, source outages, refresh delays and previous-period comparisons explicitly.</li></ul></section>
+<section class="guide-section"><h2>04 · Connect safely, then automate</h2><ol>
+<li>Choose whether the resulting analytics are public or owner-only. For private business data, use an authenticated backend or an owner-only local import; hiding a public URL or adding a browser-side password is not security.</li>
+<li>For online access, protect the entire data API with Cloudflare Access (or equivalent) and validate signed identity tokens server-side on every request. Configure least-privilege, read-only service accounts and restrict access to your identity; fail closed when verification fails.</li>
+<li>Store credentials and refresh tokens in the provider’s secret manager, never in browser JavaScript, Git, a public Pages asset, URL, log or this audit file. Return only authorized, minimized aggregates; use encryption, retention rules and private backups.</li>
+<li>Run read-only scheduled ingestion with logging, retry limits, idempotency and an explicit spending cap. Nothing should send outreach, alter records or pay a bill. Record <code>last_successful_sync</code>, partial failures and source versions.</li></ol></section>
+<section class="guide-section"><h2>05 · Validate and release</h2><ul>
+<li>Test known totals, zero versus missing data, duplicate leads, source timezones, filtering, pagination and access denial. Reconcile each property and metric with a dated source receipt.</li>
+<li>Test empty, delayed and failed sources; stale data must say when it was last refreshed. Test that unauthorized users cannot reach APIs or private exports, and that no credentials or identifiers are in the built site or Git history.</li>
+<li>Review a private preview, get your approval, then deploy. Preserve the previous version and a rollback path. Reconcile weekly and review data definitions when sources change.</li></ul><p>Nothing is connected or synced by this guide. For developer-level migration notes, see <a href="https://github.com/dosmonc/buy-sell.space/blob/main/README.md">the repository README</a>.</p></section>
+<footer class="audit-footer"><span>tyspace · measured beats imagined.</span><span><a href="index.html">Analytics</a> &nbsp;·&nbsp; <a href="audit.html">Priority plan</a></span></footer>
+</main></div></div></body></html>

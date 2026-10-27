@@ -1,0 +1,109 @@
+<!doctype html>
+<html lang="en" data-theme="dark">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="robots" content="noindex, nofollow, noarchive">
+  <meta name="referrer" content="no-referrer">
+  <meta name="color-scheme" content="dark light">
+  <meta http-equiv="Content-Security-Policy" content="default-src 'self'; script-src 'self'; style-src 'self'; img-src 'self' data:; font-src 'self'; connect-src 'none'; object-src 'none'; base-uri 'none'; form-action 'none'">
+  <title>Audit workspace · tyspace</title>
+  <script src="assets/js/audit-theme.js"></script>
+  <link rel="stylesheet" href="assets/css/app.css">
+  <link rel="stylesheet" href="assets/css/audit.css">
+</head>
+<body class="audit-page">
+<a class="skip-link" href="#auditMain">Skip to audit workspace</a>
+<div class="audit-layout">
+  <aside class="audit-sidebar" aria-label="Workspace navigation">
+    <a class="brand audit-brand" href="index.html" aria-label="tyspace overview">
+      <span class="brand-mark" aria-hidden="true">ty</span>
+      <span class="brand-copy"><strong>tyspace</strong><span>operator workspace</span></span>
+    </a>
+    <div class="audit-nav-group">
+      <span class="audit-nav-label">WORKSPACE</span>
+      <a class="audit-nav-link" href="index.html"><span class="audit-nav-icon" aria-hidden="true">◫</span> Analytics overview</a>
+      <a class="audit-nav-link active" href="audit.html" aria-current="page"><span class="audit-nav-icon" aria-hidden="true">◈</span> Priority plan <span class="side-dot" aria-hidden="true"></span></a>
+      <a class="audit-nav-link" href="real-data.html"><span class="audit-nav-icon" aria-hidden="true">↗</span> Real-data guide</a>
+      <a class="audit-nav-link" href="about.html"><span class="audit-nav-icon" aria-hidden="true">○</span> About tyspace</a>
+    </div>
+    <div class="audit-side-bottom">
+      <div class="privacy-card"><span class="privacy-icon" aria-hidden="true">⌁</span><div><strong>Local-first by design</strong><p>Your audit is not in the public repo. It stays in this browser.</p></div></div>
+      <button class="audit-theme" id="auditTheme" type="button" aria-label="Toggle color theme"><span aria-hidden="true">◐</span> <span id="auditThemeLabel">Switch theme</span></button>
+    </div>
+  </aside>
+
+  <div class="audit-main-col">
+    <header class="audit-topbar">
+      <div><span class="audit-top-breadcrumb">TYSPACE <span>/</span> RANKOPS</span><p>Priority plan</p></div>
+      <div class="audit-top-actions"><span class="local-badge"><span></span> On this device</span><button class="audit-theme-mobile" id="auditThemeMobile" type="button" aria-label="Toggle color theme">◐</button><button class="a-button a-button-quiet" id="backupBtn" type="button" disabled>↓ <span>Export backup</span></button></div>
+    </header>
+
+    <main class="audit-main" id="auditMain">
+      <div class="mobile-brand"><a href="index.html"><span class="brand-mark">ty</span> tyspace</a><a href="index.html">← Analytics</a></div>
+      <section class="audit-hero">
+        <div class="hero-copy"><div class="hero-kicker"><span></span> YOUR PRIVATE WORKSPACE</div><h1>The work ahead,<br><em>in one place.</em></h1><p>Turn the RankOps audit into clear next steps, thoughtful decisions, and one honest source of context.</p><div class="hero-meta"><span>◷ &nbsp; Audit snapshot · Oct 26, 2026</span><span>◇ &nbsp; Nothing sends automatically</span></div></div>
+        <div class="hero-art" aria-hidden="true"><div class="hero-orbit orbit-one"></div><div class="hero-orbit orbit-two"></div><div class="hero-center"><span>ty</span><small>SPACE TO<br>FOCUS</small></div><div class="orbit-chip chip-a">01 <b>FOCUS</b></div><div class="orbit-chip chip-b">02 <b>DECIDE</b></div><div class="orbit-chip chip-c">03 <b>FOLLOW THROUGH</b></div></div>
+      </section>
+
+      <div class="notice" role="note"><span class="notice-icon" aria-hidden="true">!</span><p><strong>A snapshot, not a live connection.</strong> The audit reflects what its author reported on Oct 26; check deadlines and current account status before acting. Suggested answers are not approvals.</p></div>
+
+      <section class="import-card" id="importCard" aria-labelledby="importTitle">
+        <div class="import-icon" aria-hidden="true">↥</div>
+        <div class="import-copy"><div class="section-kicker">START HERE · PRIVATE IMPORT</div><h2 id="importTitle">Bring your audit into this browser.</h2><p>Choose the private audit text file or a tyspace backup. The file is read on your device, never uploaded to this site.</p><div class="import-steps"><span><b>01</b> Download your private file</span><span><b>02</b> Open it here</span><span><b>03</b> Export a backup</span></div></div>
+        <label class="a-button a-button-primary file-label" for="auditFile">Choose private file <span aria-hidden="true">↗</span><input class="sr-only" id="auditFile" type="file" accept=".txt,.json,text/plain,application/json"></label>
+      </section>
+      <div class="privacy-note">Private does not mean encrypted: anyone using this browser profile can read the data. Browser clearing removes it. Keep backups in a private place; nothing syncs across devices.</div>
+      <div class="audit-message" id="auditMessage" role="status" aria-live="polite"></div>
+
+      <div id="workspace" hidden>
+        <section class="summary-grid" aria-label="Audit progress">
+          <article class="summary-card"><span class="summary-label">P0 · FIRST UP <span>↗</span></span><strong id="summaryP0">—</strong><p>priority actions still open</p><div class="summary-rule"><i id="p0Progress"></i></div></article>
+          <article class="summary-card"><span class="summary-label">YOUR DECISIONS <span>◈</span></span><strong id="summaryQuestions">—</strong><p>questions answered</p><div class="summary-rule blue"><i id="questionProgress"></i></div></article>
+          <article class="summary-card"><span class="summary-label">ACTION PLAN <span>✓</span></span><strong id="summaryTasks">—</strong><p>priority tasks marked done</p><div class="summary-rule green"><i id="taskProgress"></i></div></article>
+          <article class="summary-card focus-card"><span class="summary-label">CURRENT FOCUS <span>◎</span></span><strong id="summaryFocus">None yet</strong><p id="summaryFocusSub">Choose one task to start</p></article>
+        </section>
+
+        <div class="workspace-head"><div><span class="section-kicker">THE OPERATING PLAN</span><h2>Your next move.</h2><p>Start with P0. Keep one task in progress; everything else can wait.</p></div><div class="workspace-controls"><label class="a-button a-button-quiet file-label" for="replaceFile">Replace file<input class="sr-only" id="replaceFile" type="file" accept=".txt,.json,text/plain,application/json"></label><button class="a-button a-button-quiet danger-link" id="clearBtn" type="button">Clear device data</button></div></div>
+
+        <nav class="audit-tabs" aria-label="Audit sections">
+          <button type="button" class="audit-tab active" data-view="priorities" aria-current="page">Priorities <span id="tabTaskCount"></span></button>
+          <button type="button" class="audit-tab" data-view="decisions">Decisions <span id="tabQuestionCount"></span></button>
+          <button type="button" class="audit-tab" data-view="other">More actions</button>
+          <button type="button" class="audit-tab" data-view="source">Full audit</button>
+          <a class="audit-tab" href="real-data.html">Real-data guide ↗</a>
+        </nav>
+
+        <section class="workspace-view" id="view-priorities" aria-labelledby="priorityViewTitle">
+          <div class="view-title"><div><h3 id="priorityViewTitle">The priority list</h3><p>All original tasks, in the audit’s order. Status changes are local only.</p></div><span class="view-meta">P0 → P3 + PARKED</span></div>
+          <div class="filter-row"><label class="search-field"><span aria-hidden="true">⌕</span><input id="taskSearch" type="search" placeholder="Search tasks or evidence" aria-label="Search priority tasks"></label><label><span class="sr-only">Filter priority</span><select id="priorityFilter"><option value="all">All priorities</option><option value="P0">P0 · Today</option><option value="P1">P1 · This week</option><option value="P2">P2 · Next two weeks</option><option value="P3">P3 · Cleanup</option><option value="Parked">Parked</option></select></label><label><span class="sr-only">Filter task status</span><select id="statusFilter"><option value="all">All statuses</option><option>Not started</option><option>In progress</option><option>Blocked</option><option>Done</option><option>Parked</option></select></label></div>
+          <div id="taskList"></div>
+        </section>
+
+        <section class="workspace-view" id="view-decisions" hidden aria-labelledby="decisionViewTitle">
+          <div class="view-title"><div><h3 id="decisionViewTitle">Questions for you</h3><p>Record your answers here. Suggestions are the audit author’s defaults, not decisions or facts.</p></div><span class="view-meta">PERSONAL DECISIONS</span></div>
+          <div class="filter-row"><label class="search-field"><span aria-hidden="true">⌕</span><input id="questionSearch" type="search" placeholder="Search questions" aria-label="Search questions"></label><label><span class="sr-only">Filter question status</span><select id="questionFilter"><option value="all">All questions</option><option value="unanswered">Unanswered</option><option value="answered">Answered</option></select></label></div>
+          <div class="decision-note">Your answers are notes on this device only. They do not change the original document, approve a proposal, pause a trigger, send an email, or update an account.</div>
+          <div id="questionList"></div>
+        </section>
+
+        <section class="workspace-view" id="view-other" hidden aria-labelledby="otherViewTitle">
+          <div class="view-title"><div><h3 id="otherViewTitle">More actions & findings</h3><p>Site findings, evidence captures, deadlines, admin, noise and proposed automations from the audit.</p></div><span class="view-meta">SOURCE-ORDERED</span></div>
+          <div class="filter-row"><label class="search-field"><span aria-hidden="true">⌕</span><input id="otherSearch" type="search" placeholder="Search findings and actions" aria-label="Search other audit actions"></label><label><span class="sr-only">Filter action category</span><select id="otherFilter"><option value="all">All categories</option></select></label></div>
+          <div class="decision-note">These can overlap the priority list. Updating one local status does not change related items or the source document.</div>
+          <div id="otherList"></div>
+        </section>
+
+        <section class="workspace-view" id="view-source" hidden aria-labelledby="sourceViewTitle">
+          <div class="view-title"><div><h3 id="sourceViewTitle">The complete audit</h3><p>Read the entire imported document, including source limitations and the unsent draft. Search filters sections.</p></div><span class="view-meta">ORIGINAL TEXT</span></div>
+          <div class="filter-row"><label class="search-field"><span aria-hidden="true">⌕</span><input id="sourceSearch" type="search" placeholder="Search the full audit" aria-label="Search the full audit"></label><button class="a-button a-button-quiet" id="downloadSource" type="button">↓ Download original text</button></div>
+          <div id="sourceList"></div>
+        </section>
+      </div>
+      <footer class="audit-footer"><span>tyspace · A little more signal, a little less noise.</span><span><a href="index.html">Analytics</a> &nbsp;·&nbsp; <a href="real-data.html">Real-data guide</a></span></footer>
+    </main>
+  </div>
+</div>
+<script src="assets/js/audit.js"></script>
+</body>
+</html>
