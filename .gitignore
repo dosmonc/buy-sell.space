@@ -1,3 +1,9 @@
 .DS_Store
 Thumbs.db
 *.log
+
+# Owner-only exports and browser backups must never enter the public repository.
+/google_drive/
+/private/
+rankops-audit-source.txt
+*private-audit-backup*.json

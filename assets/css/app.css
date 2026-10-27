@@ -1660,3 +1660,9 @@ td.num.dim { color: var(--muted); }
   .donut { max-width: 176px !important; }
   .dl-row { font-size: 12px; }
 }
+
+/* Local audit entry point; the public site never contains the audit itself. */
+.audit-callout { display: flex; align-items: center; gap: 15px; margin: 0 0 22px; padding: 16px 18px; border: 1px solid color-mix(in srgb, var(--accent) 25%, var(--border)); border-radius: 12px; background: color-mix(in srgb, var(--accent) 5%, var(--panel)); }
+.audit-callout-mark { display: grid; place-items: center; flex: 0 0 42px; height: 42px; border-radius: 9px; color: var(--accent); background: var(--accent-soft); font-size: 21px; }
+.audit-callout-copy { flex: 1; min-width: 0; }.audit-callout-copy > span { color: var(--accent); font: 700 9px var(--font-mono); letter-spacing: .11em; }.audit-callout-copy h3 { margin-top: 3px; color: var(--text-strong); font-size: 14px; }.audit-callout-copy p { margin-top: 2px; color: var(--muted); font-size: 11px; }.audit-callout-link { flex: 0 0 auto; white-space: nowrap; }.side-new { margin-left: auto; color: var(--accent); font: 700 8px var(--font-mono); }
+@media (max-width: 560px) { .audit-callout { flex-wrap: wrap; }.audit-callout-mark { flex-basis: 36px; height: 36px; }.audit-callout-copy { flex-basis: calc(100% - 52px); }.audit-callout-link { margin-left: 51px; } }

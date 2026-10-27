@@ -35,7 +35,7 @@
     visibility: { label: 'Visibility score', unit: '/100', plural: 'score' }
   };
 
-  var YTD_START = Math.round((Date.UTC(2026, 0, 1) - TIME.START_MS) / TIME.DAY_MS);
+  var YTD_START = Math.max(0, Math.round((Date.UTC(new Date(TIME.END_MS).getUTCFullYear(), 0, 1) - TIME.START_MS) / TIME.DAY_MS));
 
   /* ---------- helpers ---------- */
   function $(sel, root) { return (root || document).querySelector(sel); }
@@ -478,17 +478,17 @@
 
     var heading, copy;
     if (!prop) {
-      heading = 'Every property, <span class="accent">one live read</span>.';
-      copy = 'Traffic, AI citations and leads across the RankOps agency site, the North Carolina land company and the Father Dust label — filtered together, updated together.';
+      heading = 'Every property, <span class="accent">one demo read</span>.';
+      copy = 'Explore sample traffic, AI citations and leads for three properties. These figures are generated demo data, not measurements.';
     } else if (prop.id === 'rankops') {
       heading = 'The agency site, <span class="accent">in numbers</span>.';
-      copy = 'Which GEO pages AI assistants actually cite, where the free visibility maps come from, and which content turns into retainer conversations.';
+      copy = 'Demo data illustrating GEO pages, visibility-map requests and agency conversations — not actual performance.';
     } else if (prop.id === 'buysell') {
       heading = 'Land sellers, <span class="accent">end to end</span>.';
-      copy = 'Cash-offer and county pages, AI answers about selling land in North Carolina, and how many landowners get as far as a written offer request.';
+      copy = 'Demo data illustrating land pages, AI answers and written offer requests — not actual activity.';
     } else {
       heading = 'The label, <span class="accent">the artist, the noise</span>.';
-      copy = 'Drop-day spikes, horrorcore search demand, D3FFM3FFR3CORDZ submission interest and the AI answers that name Father Dust.';
+      copy = 'Demo data illustrating music releases, search demand and artist submissions — not actual activity.';
     }
     $('#introHeading').innerHTML = heading;
     $('#introCopy').textContent = copy;
@@ -562,9 +562,9 @@
     var host = $('#kpis');
     var agg = view.agg, prev = view.prevAgg;
     var cards = [
-      { metric: 'visitors', label: 'Unique visitors', token: '--accent', help: 'Human sessions across the selected scope. AI-answer visits are tagged from referrer and UTM signals.' },
+      { metric: 'visitors', label: 'Visits (demo)', token: '--accent', help: 'Synthetic daily traffic totals. These are not measured sessions or deduplicated unique people.' },
       { metric: 'citations', label: 'AI citations', token: '--s-ai', help: 'Times an AI engine named the site by name in an answer. This is the count, not a share of prompts.' },
-      { metric: 'leads', label: 'Leads & requests', token: '--s-organic', help: 'Form submissions, cash-offer estimates and submissions the label actually receives.' },
+      { metric: 'leads', label: 'Leads & requests', token: '--s-organic', help: 'Synthetic examples of form submissions, cash-offer estimates and label submissions; not real requests.' },
       { metric: 'visibility', label: 'AI visibility score', token: '--s-direct', help: 'Weighted average of the site\'s AI visibility score across the window (0–100 rubric).' }
     ];
 

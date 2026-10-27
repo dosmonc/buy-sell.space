@@ -2,8 +2,8 @@
    ------------------------------------------------------------------
    Every number in this demo is generated deterministically in the
    browser from the seeds below. No network calls, no cookies, no
-   personal data. Swap TYSPACE.data for a real API response and the
-   dashboard renders exactly the same way.
+   personal data. This simulation uses estimated distributions; see
+   real-data.html and README.md before integrating measured data.
    ------------------------------------------------------------------ */
 (function () {
   'use strict';
